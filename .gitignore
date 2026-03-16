@@ -1,0 +1,71 @@
+# Terraform / Terragrunt
+
+# Local .terraform directories
+**/.terraform/*
+
+# Terraform lock files (keep if you want to pin provider versions)
+# .terraform.lock.hcl
+
+# Terraform state files
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+
+# Terraform plan files
+*.tfplan
+*.tfplan.*
+
+# Terraform variable files that may contain secrets
+*.tfvars
+*.tfvars.json
+
+# Terragrunt cache directories
+**/.terragrunt-cache/*
+
+# Crash log files
+crash.log
+crash.*.log
+
+# Override files (local overrides, not for version control)
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Terragrunt generated files
+.terragrunt-*
+
+# SSH keys
+*.pem
+*.key
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+
+# AWS credentials
+.aws/
+credentials
+aws_credentials
+
+# Sensitive environment variable files
+.env
+.env.*
+!.env.example
+
+# Editor / IDE directories
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# macOS metadata
+.DS_Store
+
+# Linux temporary files
+Thumbs.db
+
+# Logs
+*.log
+logs/
