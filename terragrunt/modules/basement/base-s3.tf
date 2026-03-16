@@ -118,7 +118,7 @@ module "s3_bucket_elb_logs" {
   }
 
   control_object_ownership = true
-  object_ownership         = "ObjectWriter"
+  object_ownership         = "BucketOwnerPreferred"
 
   // https://docs.aws.amazon.com/elasticloadbalancing/latest/application/enable-access-logging.html#attach-bucket-policy
   attach_policy = true

@@ -111,7 +111,8 @@ locals {
   region_vars  = read_terragrunt_config(find_in_parent_folders("region.hcl"))
   account_vars = read_terragrunt_config(find_in_parent_folders("account.hcl"))
 
-  account_id = local.account_vars.locals.account_id // get_aws_account_id() can't be used straight away because it lacks of AWS profile argument
+  //account_id = local.account_vars.locals.account_id // get_aws_account_id() can't be used straight away because it lacks of AWS profile argument
+  account_id = run_cmd("--terragrunt-quiet", "aws", "sts", "get-caller-identity", "--profile", local.account_name, "--query", "Account", "--output", "text")
   //account_name     = local.account_vars.locals.account_name
   account_name     = "pci-dss-${local.env}" // AWS profile must be configured with the same name in ~/.aws/config
   aws_region_short = local.aws_regions[local.aws_region]["name_short"]
